@@ -75,7 +75,7 @@
     <div class="navigation">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="{{route('home')}}">
                     <img src="{{asset('/')}}website/images/logo.png" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -86,84 +86,87 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
 
-                        <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#" role="button"  aria-haspopup="true"
                                aria-expanded="false">
                                 Home
                             </a>
-                            <div class="dropdown-menu" >
-                                <a class="dropdown-item" href="index.html">Home Page 1</a>
-                                <a class="dropdown-item" href="homepage-2.html">Home Page 2</a>
-                                <a class="dropdown-item" href="homepage-3.html">Home Page 3</a>
-                            </div>
+{{--                            <div class="dropdown-menu" >--}}
+{{--                                <a class="dropdown-item" href="index.html">Home Page 1</a>--}}
+{{--                                <a class="dropdown-item" href="homepage-2.html">Home Page 2</a>--}}
+{{--                                <a class="dropdown-item" href="homepage-3.html">Home Page 3</a>--}}
+{{--                            </div>--}}
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        <li class="nav-item ">
+                            <a class="nav-link " href="#" role="button"  aria-haspopup="true"
                                aria-expanded="false">
                                 About Us
                             </a>
-                            <div class="dropdown-menu" >
-                                <a class="dropdown-item" href="about.html">About page</a>
-                                <a class="dropdown-item" href="about-2.html">About page-2</a>
-                            </div>
+{{--                            <div class="dropdown-menu" >--}}
+{{--                                <a class="dropdown-item" href="about.html">About page</a>--}}
+{{--                                <a class="dropdown-item" href="about-2.html">About page-2</a>--}}
+{{--                            </div>--}}
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
-                                Service
+                                Training Category
                             </a>
                             <div class="dropdown-menu" >
-                                <a class="dropdown-item" href="service.html">Service page</a>
-                                <a class="dropdown-item" href="service-2.html">Service page-2</a>
-                                <a class="dropdown-item" href="service-single.html">Service Single</a>
+                                <a class="dropdown-item" href="service.html">Category One</a>
+                                <a class="dropdown-item" href="service-2.html">Category Two </a>
+                                <a class="dropdown-item" href="service-single.html">Category Three</a>
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        <li class="nav-item ">
+                            <a class="nav-link " href="#" role="button"  aria-haspopup="true"
                                aria-expanded="false">
-                                Pages
+                                All Training
                             </a>
-                            <div class="dropdown-menu" >
-                                <a class="dropdown-item" href="team.html">Team Page</a>
-                                <a class="dropdown-item" href="pricing.html">Pricing Page</a>
-                                <a class="dropdown-item" href="project.html">project Page</a>
-                                <a class="dropdown-item" href="faqs.html">FAQs Page</a>
-                                <a class="dropdown-item" href="project-single.html">Project Single</a>
-                                <a class="dropdown-item" href="team-single.html">Team Single</a>
-                                <a class="dropdown-item" href="404.html">404 Page</a>
-                                <a class="dropdown-item" href="signup.html">Sign Up Page</a>
-                                <a class="dropdown-item" href="login.html">Login Page</a>
-                                <a class="dropdown-item" href="comming-soon.html">Comming Soon Page</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
-                                Blog
-                            </a>
-                            <div class="dropdown-menu" >
-                                <a class="dropdown-item" href="blog.html">Blog Page</a>
-                                <a class="dropdown-item" href="blog-sidebar.html">Blog with Sidebar</a>
-                                <a class="dropdown-item" href="blog-single.html">Blog Single</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
-                                Elements
-                            </a>
-                            <div class="dropdown-menu" >
-                                <a class="dropdown-item" href="components/buttons.html">Buttons</a>
-                                <a class="dropdown-item" href="components/icons.html">Icons</a>
-                                <a class="dropdown-item" href="components/typography.html">Typography</a>
-                                <a class="dropdown-item" href="components/accordions.html">Accordions</a>
-                                <a class="dropdown-item" href="components/blog-contents.html">Blog Contents</a>
-                                <a class="dropdown-item" href="components/service-contents.html">Service Contents</a>
-                                <a class="dropdown-item" href="components/team-contents.html">Team Contents</a>
-                            </div>
+{{--                            <div class="dropdown-menu" >--}}
+{{--                                <a class="dropdown-item" href="team.html">Team Page</a>--}}
+{{--                                <a class="dropdown-item" href="pricing.html">Pricing Page</a>--}}
+{{--                                <a class="dropdown-item" href="project.html">project Page</a>--}}
+{{--                                <a class="dropdown-item" href="faqs.html">FAQs Page</a>--}}
+{{--                                <a class="dropdown-item" href="project-single.html">Project Single</a>--}}
+{{--                                <a class="dropdown-item" href="team-single.html">Team Single</a>--}}
+{{--                                <a class="dropdown-item" href="404.html">404 Page</a>--}}
+{{--                                <a class="dropdown-item" href="signup.html">Sign Up Page</a>--}}
+{{--                                <a class="dropdown-item" href="login.html">Login Page</a>--}}
+{{--                                <a class="dropdown-item" href="comming-soon.html">Comming Soon Page</a>--}}
+{{--                            </div>--}}
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                Login/Registration
+                            </a>
+
+                        </li>
+{{--                        <li class="nav-item dropdown">--}}
+{{--                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"--}}
+{{--                               aria-expanded="false">--}}
+{{--                                Elements--}}
+{{--                            </a>--}}
+{{--                            <div class="dropdown-menu" >--}}
+{{--                                <a class="dropdown-item" href="components/buttons.html">Buttons</a>--}}
+{{--                                <a class="dropdown-item" href="components/icons.html">Icons</a>--}}
+{{--                                <a class="dropdown-item" href="components/typography.html">Typography</a>--}}
+{{--                                <a class="dropdown-item" href="components/accordions.html">Accordions</a>--}}
+{{--                                <a class="dropdown-item" href="components/blog-contents.html">Blog Contents</a>--}}
+{{--                                <a class="dropdown-item" href="components/service-contents.html">Service Contents</a>--}}
+{{--                                <a class="dropdown-item" href="components/team-contents.html">Team Contents</a>--}}
+{{--                            </div>--}}
+{{--                        </li>--}}
+                        <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Login/Registration
+                            </a>
+
                         </li>
                     </ul>
                 </div>
