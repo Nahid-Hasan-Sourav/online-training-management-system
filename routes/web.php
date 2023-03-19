@@ -20,4 +20,4 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/about-us',[HomeController::class,'about'])->name('about');
-Route::get('/training-category',[HomeController::class,'trainingCategory'])->name('train');
+Route::get('/training-category',[HomeController::class,'trainingCategory'])->name('training-category');
