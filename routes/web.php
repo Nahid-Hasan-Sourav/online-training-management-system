@@ -21,3 +21,12 @@ use App\Http\Controllers\HomeController;
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/about-us',[HomeController::class,'about'])->name('about');
 Route::get('/training-category',[HomeController::class,'trainingCategory'])->name('training-category');
+Route::get('/all-training',[HomeController::class,'allTraining'])->name('all-training');
+Route::get('/contact',[HomeController::class,'contact'])->name('contact');
+Route::get('/login-registration',[HomeController::class,'auth'])->name('login-registration');
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

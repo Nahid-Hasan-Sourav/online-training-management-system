@@ -19,4 +19,12 @@ class HomeController extends Controller
         return view('website.training-category.index');
     }
 
+    public function allTraining(){
+        return view('website.training.index');
+    }
+
+    public function contact(){
+        return view('website.auth.index');
+    }
+
 }
