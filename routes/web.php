@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TeacherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +27,11 @@ Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::get('/login-registration',[HomeController::class,'auth'])->name('login-registration');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('/teacher/add',[TeacherController::class,'index'])->name('teacher.add');
+    Route::get('/teacher/manage',[TeacherController::class,'manage'])->name('teacher.manage');
+    Route::post('/teacher/create',[TeacherController::class,'createTeacher'])->name('teacher.create');
+    Route::get('/teacher/edit/{id}',[TeacherController::class,'editTeacher'])->name('teacher.edit');
+    Route::post('/teacher/update/{id}',[TeacherController::class,'updateTeacher'])->name('teacher.update');
+    Route::get('/teacher/delete/{id}',[TeacherController::class,'delete'])->name('teacher.delete');
 });
