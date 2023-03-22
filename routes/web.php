@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TeacherController;
+use \App\Http\Controllers\TeacherAuthController;
+use  \App\Http\Controllers\TrainingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +28,26 @@ Route::get('/all-training',[HomeController::class,'allTraining'])->name('all-tra
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::get('/login-registration',[HomeController::class,'auth'])->name('login-registration');
 
+
+Route::get('/teacher/login',[TeacherAuthController::class,'index'])->name('teacher.login');
+Route::post('/teacher/login',[TeacherAuthController::class,'login'])->name('teacher.login');
+
+Route::middleware(['teacher.auth'])->group(function (){
+    Route::get('/teacher/dashboard',    [TeacherAuthController::class,'dashboard'])->name('teacher.dashboard');
+    Route::post('/teacher/logout',      [TeacherAuthController::class,'logout'])->name('teacher.logout');
+    Route::get('/teacher/add',          [TrainingController::class,'index'])->name('training.add');
+    Route::post('/teacher/create',      [TrainingController::class,'create'])->name('training.create');
+    Route::post('/teacher/manage',      [TrainingController::class,'manage'])->name('training.manage');
+    Route::post('/teacher/edit/{id}',   [TrainingController::class,'edit'])->name('training.edit');
+    Route::post('/teacher/update/{id}', [TrainingController::class,'update'])->name('training.update');
+    Route::post('/teacher/delete/{id}', [TrainingController::class,'delete'])->name('training.delete');
+});
+
+
+
+
+
+//this is for admin middle ware
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/teacher/add',[TeacherController::class,'index'])->name('teacher.add');
@@ -33,5 +55,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/teacher/create',[TeacherController::class,'createTeacher'])->name('teacher.create');
     Route::get('/teacher/edit/{id}',[TeacherController::class,'editTeacher'])->name('teacher.edit');
     Route::post('/teacher/update/{id}',[TeacherController::class,'updateTeacher'])->name('teacher.update');
-    Route::get('/teacher/delete/{id}',[TeacherController::class,'delete'])->name('teacher.delete');
+    Route::post('/teacher/delete/{id}',[TeacherController::class,'delete'])->name('teacher.delete');
 });

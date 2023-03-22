@@ -46,10 +46,15 @@
 
                                 {{--delete using form--}}
 
-                                <form action="{{route('teacher.delete', ['id'=>$teacher->id])}}">
-                                    <button type="submit" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-trash"></i>
+                                <form action="{{route('teacher.delete', ['id'=>$teacher->id])}}" method='POST'
+                                onsubmit="return confirm('Are you sure you want to delete this ')"
+                                >
+                                @csrf
+
+                                    <button type='submit' class='btn btn-danger btn-sm'>
+                                        <i class='fa fa-trash'></i>
                                     </button>
+
                                 </form>
 {{--                                <a href="{{route('teacher.delete', ['id'=>$teacher->id])}}" class="btn btn-danger btn-sm"--}}
 
