@@ -20,6 +20,10 @@
     <!-- Responsive datatable examples -->
     <link href="{{asset('/')}}admin/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- Summernote css -->
+    <link href="{{asset('/')}}admin/assets/libs/summernote/summernote-bs4.min.css" rel="stylesheet" type="text/css" />
+
+
     <!-- Bootstrap Css -->
     <link href="{{asset('/')}}admin/assets/css/bootstrap.min.css"  rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
@@ -720,6 +724,13 @@
 
 <!-- Datatable init js -->
 <script src="{{asset('/')}}admin/assets/js/pages/datatables.init.js"></script>
+
+
+<!-- Summernote js -->
+<script src="{{asset('/')}}admin/assets/libs/summernote/summernote-bs4.min.js"></script>
+
+<!-- init js -->
+<script src="{{asset('/')}}admin/assets/js/pages/form-editor.init.js"></script>
 
 
 <!-- App js -->

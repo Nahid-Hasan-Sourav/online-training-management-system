@@ -33,14 +33,15 @@ Route::get('/teacher/login',[TeacherAuthController::class,'index'])->name('teach
 Route::post('/teacher/login',[TeacherAuthController::class,'login'])->name('teacher.login');
 
 Route::middleware(['teacher.auth'])->group(function (){
-    Route::get('/teacher/dashboard',    [TeacherAuthController::class,'dashboard'])->name('teacher.dashboard');
-    Route::post('/teacher/logout',      [TeacherAuthController::class,'logout'])->name('teacher.logout');
-    Route::get('/teacher/add',          [TrainingController::class,'index'])->name('training.add');
-    Route::post('/teacher/create',      [TrainingController::class,'create'])->name('training.create');
-    Route::post('/teacher/manage',      [TrainingController::class,'manage'])->name('training.manage');
-    Route::post('/teacher/edit/{id}',   [TrainingController::class,'edit'])->name('training.edit');
-    Route::post('/teacher/update/{id}', [TrainingController::class,'update'])->name('training.update');
-    Route::post('/teacher/delete/{id}', [TrainingController::class,'delete'])->name('training.delete');
+    Route::get('/teacher/dashboard',[TeacherAuthController::class,'dashboard'])->name('teacher.dashboard');
+    Route::post('/teacher/logout',[TeacherAuthController::class,'logout'])->name('teacher.logout');
+
+    Route::get('/training/add',[TrainingController::class,'index'])->name('training.add');
+    Route::post('/training/create',[TrainingController::class,'create'])->name('training.create');
+    Route::get('/training/manage',[TrainingController::class,'manage'])->name('training.manage');
+    Route::get('/training/edit/{id}',[TrainingController::class,'edit'])->name('training.edit');
+    Route::post('/training/update/{id}',[TrainingController::class,'update'])->name('training.update');
+    Route::get('/training/delete/{id}',[TrainingController::class,'delete'])->name('training.delete');
 });
 
 

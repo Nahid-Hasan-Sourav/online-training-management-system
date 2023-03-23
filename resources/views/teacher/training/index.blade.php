@@ -20,7 +20,7 @@
                         <div class="form-group row mb-4">
                             <label for="horizontal-email-input" class="col-sm-3 col-form-label">Short Description</label>
                             <div class="col-sm-9">
-                                <teaxtarea  name="description" class="form-control" id="horizontal-email-input">
+                                <teaxtarea  name="description" class="form-control summernote" id="horizontal-email-input">
 
                                 </teaxtarea>
                             </div>

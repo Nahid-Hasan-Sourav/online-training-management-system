@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('trainings', function (Blueprint $table) {
             $table->id();
+            $table->integer('teacher_id');
+            $table->longText('description');
+            $table->longText('starting_date');
+            $table->integer('price');
+            $table->text('image');
             $table->timestamps();
         });
     }
