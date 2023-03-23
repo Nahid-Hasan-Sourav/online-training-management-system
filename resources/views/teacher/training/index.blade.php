@@ -12,6 +12,20 @@
                     <form action="{{route('training.create')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row mb-4">
+                            <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Training Category</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" required_name="category_id">
+                                    <option value=""> -- Select Training Category -- </option>
+                                  @foreach($categories as $category)
+
+                                      <option value="{{$category->id}}">{{$category->category_title}}</option>
+
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-4">
                             <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Training Title</label>
                             <div class="col-sm-9">
                                 <input type="text" name="title" class="form-control" id="horizontal-firstname-input">
@@ -36,7 +50,7 @@
                         <div class="form-group row mb-4">
                             <label for="horizontal-password-input" class="col-sm-3 col-form-label">Training Price</label>
                             <div class="col-sm-9">
-                                <input type="number" name="mobile" class="form-control" >
+                                <input type="number" name="price" class="form-control" >
                             </div>
                         </div>
                         <div class="form-group row mb-4">

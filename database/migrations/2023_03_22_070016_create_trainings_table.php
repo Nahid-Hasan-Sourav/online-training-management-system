@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('trainings', function (Blueprint $table) {
             $table->id();
-            $table->integer('teacher_id');
+            $table->integer('category_id')->nullable();;
+            $table->integer('teacher_id')->nullable();;
+            $table->text('title');
             $table->longText('description');
             $table->longText('starting_date');
             $table->integer('price');

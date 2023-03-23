@@ -2,16 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Teacher;
+use App\Models\Training;
 use Illuminate\Http\Request;
 
 class TrainingController extends Controller
 {
+    private $training,$categories,$trainings;
     public function index(){
-        return view('teacher.training.index');
+        $this->categories = Category::all();
+        return view('teacher.training.index',['categories' => $this->categories]);
     }
 
     public function create(Request $request){
-        return $request->all();
+
+        training::newTraining($request);
+        return  back()->with('message','New  training added successfully');
     }
 
     public function manage(){

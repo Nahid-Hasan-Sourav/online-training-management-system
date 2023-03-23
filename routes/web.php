@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TeacherController;
 use \App\Http\Controllers\TeacherAuthController;
 use  \App\Http\Controllers\TrainingController;
+use \App\Http\Controllers\CategoryCotroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,4 +58,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/teacher/edit/{id}',[TeacherController::class,'editTeacher'])->name('teacher.edit');
     Route::post('/teacher/update/{id}',[TeacherController::class,'updateTeacher'])->name('teacher.update');
     Route::post('/teacher/delete/{id}',[TeacherController::class,'delete'])->name('teacher.delete');
+
+
+    Route::get('/category/add',[CategoryCotroller::class,'index'])->name('category.add');
+    Route::post('/category/create',[CategoryCotroller::class,'create'])->name('category.create');
+    Route::get('/category/manage',[CategoryCotroller::class,'manage'])->name('manage.category');
+    Route::get('/category/edit/{id}',[CategoryCotroller::class,'edit'])->name('edit.category');
 });
